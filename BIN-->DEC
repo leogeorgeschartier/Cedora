@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main()
+{   
+    int power(int a , int b){
+        int puissance = 1;
+        int compteur;
+        for (compteur = 0; compteur < b ; compteur ++){
+            puissance = puissance* a ;
+        }
+        return puissance;
+    }
+    
+    int tailletableau = 0;
+    int tableau[tailletableau];
+    printf("quelle est la taille du binaire à convertir? \n");
+    scanf("%d",&tailletableau);
+    int compteur;
+    for (compteur = 0; compteur < tailletableau ; compteur++  ){
+        printf("entrez le %d-ème bit à convertir \n", compteur +1);
+        scanf("%d",&tableau[compteur]);
+    }
+    int compteur_2;
+    int decimal_result = 0;
+    int puissance = tailletableau;
+    for (compteur_2 = 0; compteur_2 < tailletableau ; compteur_2++  ){
+        puissance = puissance - 1;
+        decimal_result = decimal_result + tableau[compteur_2]*power(2,puissance);
+       
+    }
+    printf("%d",decimal_result);
+
+    return 0;
+}
