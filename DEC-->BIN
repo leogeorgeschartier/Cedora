@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main()
+{   
+    
+    int power(int a , int b){
+        int puissance = 1;
+        int compteur;
+        for (compteur = 0; compteur < b ; compteur ++){
+            puissance = puissance* a ;
+        }
+        return puissance;
+    }
+    
+    int underlog(int b ,int a){
+        int compteur = 0;
+        while (power(a,compteur) < b){
+            compteur++ ;
+        }
+        if (power(a,compteur) == b){ 
+            return compteur; }
+        else {
+            return compteur -1;
+        }
+            
+    }
+    
+    printf("%d\n",underlog(16,2));
+    
+    int decimal = 0;
+    int binaireresult = 0 ;
+    printf("quel est le decimal à convertir? \n");
+    scanf("%d",&decimal);
+    int reste = decimal ;
+    int k = 0; 
+    while (k != 1) {
+       k = underlog(reste,2);
+       reste = reste - power(2,k);
+       binaireresult = binaireresult + power(10 , k);
+       if (reste == 0){
+           k = 1; 
+       }
+       
+    }
+    printf("l'écriture binaire correspondante est %d", binaireresult + reste);
+    return 0;
+}
