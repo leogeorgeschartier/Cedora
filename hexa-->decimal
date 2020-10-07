@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main()
+{   
+    int power(int a , int b){/* Fonction pour mettre a à la puissance b */
+        int puissance = 1; /* Ceci est un commentaire C */
+        int compteur;
+        for (compteur = 0; compteur < b ; compteur ++){/* compteur ++ = avance de 1 sur compteur  */
+            puissance = puissance* a ;
+            /*printf("%d\n", compteur );  précise ce que l on affiche, %d =variable, compteur= où */
+           /* printf("%d\n", puissance );*/
+        }
+        return puissance;
+    }
+    
+    /*printf("%d\n" , power(2,5)); */
+    int tailletableau ;
+    int tableau[tailletableau];
+    printf("quelle est la taille du hexa à convertir? \n");
+    scanf("%d",&tailletableau);
+    int compteur;
+    for (compteur = 0; compteur < tailletableau ; compteur++  ){
+        printf("entrez le %d-ème hexa à convertir \n", compteur + 1);
+        scanf("%d",&tableau[compteur]);
+    }
+    int compteur_2;
+    int entier_enbase10_result = 0;
+    int puissance = tailletableau;
+    for (compteur_2 = 0; compteur_2 < tailletableau ; compteur_2++  ){ /*passque le compteur commence à 0 et tableau = longeur mot à rentrer*/
+        puissance = puissance - 1;
+        entier_enbase10_result = entier_enbase10_result + tableau[compteur_2]*power(16,puissance);
+       
+    }
+    printf("%d",entier_enbase10_result);
+
+    return 0;
+}
