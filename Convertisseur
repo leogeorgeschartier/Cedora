@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main()
+{
+    printf("Dans quelle base est écrit l'entier que vous souhaitez convertir?(reponses possibes [16/2/10])\n" );
+    int base;
+    scanf("%d",&base);
+    
+    
+    int power(int a , int b){
+        int puissance = 1;
+        int compteur;
+        for (compteur = 0; compteur < b ; compteur ++){
+            puissance = puissance* a ;
+        }
+        return puissance; 
+
+    }
+    
+    printf("Quelle est la taille du nombre que vous souhaitez convertir ?\n");
+    int tailletableau ;
+    scanf("%d",&tailletableau);
+    
+    
+    
+    
+    
+    
+
+
+}
