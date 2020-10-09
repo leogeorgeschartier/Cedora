@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main()
+{
+    printf("Nous allons sommer les premiers termes de la suite,combien de termes voulez vous sommez?\n");
+    int nombreterme;
+    scanf("%d",&nombreterme);
+    int tableau[nombreterme];
+    tableau[0] = 1;
+    int somme = 0;
+    int i; 
+    for (i = 0; i < nombreterme -1 ; i ++){
+        tableau[i+1] = tableau[i] * i + 2;
+        somme = somme + tableau[i];
+        
+   
+    }
+    printf("%d", somme + tableau[nombreterme -1]); 
+
+
+}
